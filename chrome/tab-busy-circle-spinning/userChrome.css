@@ -1,0 +1,41 @@
+/*
+This changes the tabs' "busy" icon (currently a side-to-side bouncing dot) back to the spinning circle.
+
+It's heavily based upon CSS kindly provided by jscher2000:
+https://old.reddit.com/r/firefox/comments/igyvng/please_help_fix_hourglass_icon_when_loading_page/g2x2ija/
+
+These links may also be helpful:
+https://old.reddit.com/r/FirefoxCSS/comments/igxwgn/replace_hourglass_icon_with_circle/
+https://old.reddit.com/r/FirefoxCSS/comments/wqosqw/tab_throbber_animation_for_custom_icon/
+https://support.mozilla.org/en-US/questions/1176586
+
+And this is the actual CSS used by Firefox for the throbber:
+https://hg.mozilla.org/mozilla-central/file/tip/browser/themes/shared/tabs.css
+*/
+
+/*** Revert tab throbber ***/
+@media (prefers-reduced-motion: no-preference) {	/* I added this line so it still works on Linux, by making the CSS more specific */
+	.tab-throbber[busy] {
+		background-image: url("chrome://global/skin/icons/loading.png") !important;
+		animation: unset !important;
+	}
+	.tab-throbber[busy]:not([progress]) {
+		/* Grays the blue during "Connecting" state */
+		filter: grayscale(100%);
+	}
+	@media (min-resolution: 2dppx) {
+		.tab-throbber[busy] {
+			background-image: url("chrome://global/skin/icons/loading@2x.png") !important;
+		}
+	}
+	/* Suppress bouncing dots when ui.prefersReducedMotion = 0 */
+	.tab-throbber[busy]::before {
+		background-image: none !important;
+		animation: unset !important;
+	}
+	@media (min-resolution: 2dppx) {
+		.tab-throbber[busy]::before {
+			background-image: none !important;
+		}
+	}
+}
