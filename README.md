@@ -1,8 +1,8 @@
 # firefox-css_use-multiple-userchrome-files
-Firefox chrome CSS to easily allow using multiple userChrome.css files.  This makes it much easier to update individual userChrome.css files up-to-date.
+Firefox chrome CSS to easily allow using multiple userChrome.css files.  This makes it much easier to keep individual userChrome.css files up-to-date.
 
 ## Installation
-Copy `chrome/userChrome.css` and the example `chrome/tab-busy-circle-spinning` into your Firefox profile folder:
+Copy the `chrome/userChrome.css` file and the example `chrome/tab-busy-circle-spinning` folder into your Firefox profile folder:
 * Start Firefox.
 * Open the address `about:profiles` .
 * If there is more than one profile then use the one labelled as `This is the profile in use`.
@@ -17,7 +17,7 @@ Copy `chrome/userChrome.css` and the example `chrome/tab-busy-circle-spinning` i
 * Restart Firefox.
 
 ## Usage
-Usage should hopefully be fairly self-explanatory to any with a little CSS experience, but just in case it's not...
+Usage should hopefully be fairly self-explanatory to anyone with a little CSS experience, but just in case it's not...
 
 The main `chrome/userChrome.css` file contains links to other userChrome.css files that you've downloaded to their own folders inside the main `chrome` folder.  
 
@@ -26,7 +26,7 @@ As an example I have provided `chrome/tab-busy-circle-spinning/userChrome.css`. 
 @import url("tab-busy-circle-spinning/userChrome.css");
 ~~~
 
-And you can easily disable a line by /*commenting it out*/, for example:
+And you can easily disable a line by commenting it out, for example:
 ~~~
 /*@import url("simple-curved-tabs/userChrome.css");*/
 /*@import url("status-bar/userChrome.css");*/
