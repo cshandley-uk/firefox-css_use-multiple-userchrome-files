@@ -14,7 +14,7 @@ https://hg.mozilla.org/mozilla-central/file/tip/browser/themes/shared/tabs.css
 */
 
 /*** Revert tab throbber ***/
-@media (prefers-reduced-motion: no-preference) {	/* I added this line so it still works on Linux, by making the CSS more specific */
+@media {	/* I added this line so it still works on Linux, by making the CSS more specific */
 	.tab-throbber[busy] {
 		background-image: url("chrome://global/skin/icons/loading.png") !important;
 		animation: unset !important;
