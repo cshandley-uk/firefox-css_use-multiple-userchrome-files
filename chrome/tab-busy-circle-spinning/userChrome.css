@@ -5,18 +5,19 @@ It's heavily based upon CSS kindly provided by jscher2000:
 https://old.reddit.com/r/firefox/comments/igyvng/please_help_fix_hourglass_icon_when_loading_page/g2x2ija/
 
 These links may also be helpful:
+https://old.reddit.com/r/firefox/comments/igx73s/this_hourglass_icon_on_loading_tabs_in_v80_is/g352q6c/
 https://old.reddit.com/r/FirefoxCSS/comments/igxwgn/replace_hourglass_icon_with_circle/
 https://old.reddit.com/r/FirefoxCSS/comments/wqosqw/tab_throbber_animation_for_custom_icon/
 https://support.mozilla.org/en-US/questions/1176586
 
 And this is the actual CSS used by Firefox for the throbber:
-https://hg.mozilla.org/mozilla-central/file/tip/browser/themes/shared/tabs.css
+jar:file:///app/lib/firefox/browser/omni.ja!/chrome/browser/skin/classic/browser/tabbrowser/tabs.css
 */
 
 /*** Revert tab throbber ***/
 @media {	/* I added this line so it still works on Linux, by making the CSS more specific */
 	.tab-throbber[busy] {
-		background-image: url("chrome://global/skin/icons/loading.png") !important;
+		background-image: url("loading.png") !important;
 		animation: unset !important;
 	}
 	.tab-throbber[busy]:not([progress]) {
@@ -25,7 +26,7 @@ https://hg.mozilla.org/mozilla-central/file/tip/browser/themes/shared/tabs.css
 	}
 	@media (min-resolution: 2dppx) {
 		.tab-throbber[busy] {
-			background-image: url("chrome://global/skin/icons/loading@2x.png") !important;
+			background-image: url("loading@2x.png") !important;
 		}
 	}
 	/* Suppress bouncing dots when ui.prefersReducedMotion = 0 */
