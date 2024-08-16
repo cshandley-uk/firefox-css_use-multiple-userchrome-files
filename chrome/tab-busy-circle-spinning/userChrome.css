@@ -24,11 +24,11 @@ jar:file:///app/lib/firefox/browser/omni.ja!/chrome/browser/skin/classic/browser
 		/* Grays the blue during "Connecting" state */
 		filter: grayscale(100%);
 	}
-	@media (min-resolution: 2dppx) {
+	/*@media (min-resolution: 2dppx) {
 		.tab-throbber[busy] {
 			background-image: url("loading@2x.png") !important;
 		}
-	}
+	}*/
 	/* Suppress bouncing dots when ui.prefersReducedMotion = 0 */
 	.tab-throbber[busy]::before {
 		background-image: none !important;
